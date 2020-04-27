@@ -38,7 +38,6 @@ export default {
   methods: {
     addSnippet() {
       this.waiting = true;
-
       axios
         .post("https://www.forverkliga.se/JavaScript/api/api-snippets.php", {
           add: "",
@@ -47,12 +46,10 @@ export default {
         })
         .then(response => {
           console.log(response.data.message);
-          console.log(typeof response);
           this.snippet = {
             title: response.data.title,
             content: response.data.content
           };
-
           if (response) {
             this.succeeded = true;
             this.waiting = false;
@@ -60,7 +57,6 @@ export default {
             this.error = true;
           }
         })
-
         .catch(error => {
           console.log("Something went wrong", error);
         });

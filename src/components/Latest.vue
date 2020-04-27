@@ -1,7 +1,6 @@
 <template>
   <div class="container">
     <h3>Se senaste snippets</h3>
-    <br />
     <button @click="getLatestSnippets">Hämta</button>
     <p class="class-wait" v-if="waiting">Väntar på svar...</p>
     <br />
@@ -18,7 +17,7 @@
       <p
         class="class-regret"
         v-show="reportSuccess && regret"
-      >Vill du ångra din rapportering? &#128561;</p>
+      >Vill du kunna ångra din rapportering? &#128561;</p>
       <button v-show="reportSuccess" @click="showRegretButton = true">Ja</button>
     </div>
     <div class="class-div" v-for="snipp in latestSnippets" :key="snipp.id">
@@ -53,7 +52,6 @@ export default {
       showRegretButton: false
     };
   },
-
   methods: {
     getLatestSnippets() {
       this.waiting = true;
@@ -79,7 +77,6 @@ export default {
         })
         .then(response => {
           console.log(response.data);
-
           if (response) {
             this.waiting = false;
             this.voteSuccess = true;
@@ -89,7 +86,6 @@ export default {
           console.log("Something went wrong...", error);
         });
     },
-
     deleteFunction(snipp_id) {
       this.waiting = true;
       axios

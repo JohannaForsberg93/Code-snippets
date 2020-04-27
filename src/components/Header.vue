@@ -1,5 +1,5 @@
-<template class="class-header" >
-  <div>
+<template>
+  <div class="class-header">
     <h1>Code snippets</h1>
     <div></div>
   </div>
@@ -9,7 +9,7 @@ export default {};
 </script>
 <style scoped>
 .class-header {
-  background-color: rgb(252, 225, 190);
+  background-color: rgb(255, 255, 255);
   padding: 20px;
 }
 </style>
